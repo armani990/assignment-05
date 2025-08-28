@@ -44,4 +44,22 @@
       Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh
     </p>
   </section>
-  
+
+
+  <section class="flex flex-col lg:flex-row gap-4 p-9 bg-[#F8FFF9]">
+
+    <!-- Cards -->
+    <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="cardContainer">
+            <!-- Cards will be injected dynamically by js -->
+    </div>
+
+    <!-- Call History -->
+    <div class="w-full lg:w-1/4 bg-white shadow-sm rounded-xl p-4 h-fit overflow-y-auto mt-6 lg:mt-0">
+
+      <div class="flex justify-between items-center mb-3">
+        <h3 class="font-semibold text-lg flex items-center gap-2"><i class="fa-solid fa-clock"></i> Call History</h3>
+        <button onclick="clearHistory()" class="bg-[#00A63E] text-white px-7 py-3 rounded-3xl text-lg">Clear</button>
+      </div>
+      <ul id="historyList" class="space-y-3 text-sm text-gray-700"></ul>
+    </div>
+  </section>
