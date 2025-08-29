@@ -49,3 +49,18 @@ card.innerHTML = `
 `;
   cardContainer.appendChild(card);
 });
+
+document.querySelectorAll(".heart-btn").forEach(btn => {
+  let clicked = false; // track if this card is already liked
+
+  btn.addEventListener("click", () => {
+    if (clicked) {
+      alert("Already selected your favorite option!");
+      return;
+    }
+    heartCount++;
+    heartCountEl.textContent = heartCount;
+    clicked = true;
+    btn.textContent = "❤️";
+  });
+});
