@@ -75,3 +75,33 @@ document.querySelectorAll(".copy-btn").forEach(btn => {
     });
   });
 });
+
+document.querySelectorAll(".call-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const name = btn.dataset.name;
+    const subtitle = btn.dataset.subtitle;
+    const number = btn.dataset.number;
+
+    if (coinCount < 20) {
+      alert("❌ Not enough coins to make a call.");
+      return;
+    }
+
+    alert(`📞 Calling: ${subtitle} (${number})...`);
+    coinCount -= 20;
+    coinCountEl.textContent = coinCount;
+
+        const li = document.createElement("li");
+    li.className = " bg-[rgba(250,250,250,1)] p-3 rounded-lg shadow flex justify-between items-center mb-2";
+
+    li.innerHTML = `
+      <div>
+        <h4 class="font-semibold text-lg text-gray-800">${name}</h4>
+        <p class="text-lg text-gray-600">${number}</p>
+      </div>
+      <span class="text-lg font-semibold">${new Date().toLocaleTimeString()}</span>
+    `;
+
+    historyList.prepend(li);
+  });
+});
