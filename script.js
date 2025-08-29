@@ -64,3 +64,14 @@ document.querySelectorAll(".heart-btn").forEach(btn => {
     btn.textContent = "❤️";
   });
 });
+
+document.querySelectorAll(".copy-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const number = btn.dataset.number;
+    navigator.clipboard.writeText(number).then(() => {
+      alert(`Copied: ${number}`);
+      copyCount++;
+      copyCountEl.textContent = copyCount;
+    });
+  });
+});
