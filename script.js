@@ -105,3 +105,6 @@ document.querySelectorAll(".call-btn").forEach(btn => {
     historyList.prepend(li);
   });
 });
+function clearHistory() {
+  historyList.innerHTML = '';
+}
